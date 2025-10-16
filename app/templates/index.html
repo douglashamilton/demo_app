@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card" role="region" aria-labelledby="countdown-heading">
+  <h2 id="countdown-heading">Plan your next milestone</h2>
+  <p class="lead-copy">
+    Enter a future date and time to start the countdown. We'll keep the remaining days and seconds visible so you stay on track.
+  </p>
+
+  <form id="countdown-form" novalidate>
+    <div class="field-group">
+      <label for="event-label">Label (optional)</label>
+      <input id="event-label" name="event-label" type="text" maxlength="80" placeholder="Team launch, exam, deliverable…" />
+    </div>
+
+    <div class="field-group">
+      <label for="target-datetime">Target date &amp; time <span aria-hidden="true">*</span></label>
+      <input id="target-datetime" name="target-datetime" type="datetime-local" required />
+      <p id="form-error" class="input-error" role="alert" hidden></p>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">Start countdown</button>
+      <button type="button" class="btn-secondary" id="reset-button">Reset</button>
+    </div>
+  </form>
+
+  <p id="storage-warning" class="storage-warning" role="status" hidden>
+    We couldn't save this countdown for later. Leave the tab open to keep it running.
+  </p>
+
+  <section class="countdown-display" aria-live="polite" aria-atomic="true">
+    <p id="active-label" class="countdown-label"></p>
+    <div class="countdown-grid">
+      <div class="countdown-unit">
+        <span class="countdown-value" data-unit="days">00</span>
+        <span class="countdown-caption">Days</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-value" data-unit="hours">00</span>
+        <span class="countdown-caption">Hours</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-value" data-unit="minutes">00</span>
+        <span class="countdown-caption">Minutes</span>
+      </div>
+      <div class="countdown-unit">
+        <span class="countdown-value" data-unit="seconds">00</span>
+        <span class="countdown-caption">Seconds</span>
+      </div>
+    </div>
+    <p id="status-message" class="status-message" role="status"></p>
+  </section>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="application/json" id="app-bootstrap">{{ bootstrap | tojson }}</script>
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+{% endblock %}

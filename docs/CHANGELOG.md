@@ -1,0 +1,1 @@
+# Changelog\n\nAll notable changes to this project will be documented in this file.\n\n## [Unreleased]\n- Initial MVP countdown implementation with Flask backend and Day.js frontend.\n- Local persistence, server resync, and Playwright coverage.\n

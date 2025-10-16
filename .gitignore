@@ -1,0 +1,38 @@
+# Python virtual environments
+.venv/
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# Test and coverage artifacts
+.pytest_cache/
+.coverage*
+htmlcov/
+
+# Tooling caches
+ruff_cache/
+.mypy_cache/
+
+# Playwright assets
+playwright-report/
+playwright/.cache/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Distribution / build artifacts
+dist/
+build/
+*.egg-info/
+

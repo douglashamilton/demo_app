@@ -1,0 +1,1 @@
+# Release Checklist\n\n- [ ] Update version in pyproject.toml and changelog.\n- [ ] Run \uff check .\ and \lack .\.\n- [ ] Run \pytest\ (ensuring Playwright browsers are installed).\n- [ ] Smoke test locally via \python app.py\.\n- [ ] Review accessibility using axe-core or preferred tooling.\n- [ ] Tag release and push changelog updates.\n
