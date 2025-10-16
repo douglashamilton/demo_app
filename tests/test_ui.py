@@ -7,6 +7,14 @@ from datetime import datetime, timedelta
 import pytest
 from werkzeug.serving import make_server
 
+# The Playwright-powered tests rely on the pytest-playwright plugin to provide
+# the ``page`` fixture. In environments where the plugin is not installed we
+# skip the entire module rather than erroring with an "unknown fixture" message.
+pytest.importorskip(
+    "pytest_playwright",
+    reason="pytest-playwright is required for Playwright UI tests.",
+)
+
 from app import create_app
 
 
